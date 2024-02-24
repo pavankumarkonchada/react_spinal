@@ -42,7 +42,7 @@ function Menu() {
   return (
     <div>
       <div className="menu">
-        <h1 className="menuTitle">Modalities</h1>
+        <h1 className="menuTitle">Treatments Need to be Given</h1>
         <div className="menuList">
           {MenuList1.map((menuItem, index) => {
             const isVisible = updatedData[index] === 1;
