@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Health from "../assets/outputimage2.jpg";
+import Health from "../assets/Brain.jpg";
 import "../styles/Monoplegia.css";
+import spino from "../assets/spino.jpg";
 import { useHistory,Link } from "react-router-dom";
 import axios from 'axios';
 const Dropdowns = () => {
@@ -125,7 +126,7 @@ const Dropdowns = () => {
 
   const handleRedirect = () => {
     console.log('Sending data to Flask server:', inputValues);
-    axios.post('https://spinalpython.onrender.com/process_data', { data: inputValues })
+    axios.post('http://localhost:5000/process_data', { data: inputValues })
       .then(response => {
         console.log('Server response:', response.data);
         const { updatedData } = response.data; // Extracting updatedData from the response
@@ -230,7 +231,12 @@ const Dropdowns = () => {
 
   return (
     <div>
+      <div class="banner"  style={{ backgroundImage: `url(${Health})` }}>
+  Spinalcord
+</div>
+<h2 className="Heading"> Type Of Injury</h2>
       <div className="center">
+      
         <label htmlFor="cType">C-Type:</label>
         <select id="cType" value={cType} onChange={handleCTypeChange} disabled={isCTypeDisabled}>
           <option value="">Select C-Type</option>
@@ -653,19 +659,23 @@ const Dropdowns = () => {
             <div>
       <button onClick={openModal}>Animate</button>
 
-      {isModalOpen && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <span className="close-button" onClick={closeModal}>
-              &times;
-            </span>
-            <video width="700" height="500" controls autoPlay >
-              <source src="/90per.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      )}
+  {isModalOpen && (
+  <div className="modal-overlay">
+    <div className="modal-content">
+      <span className="close-button" onClick={closeModal}>
+        &times;
+      </span>
+      <div className="video-and-image-container">
+        <video width="450" height="400" controls autoPlay>
+          <source src="/Normal.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <img src={spino} alt="Your Image" width="250" height="332"  style={{ verticalAlign: 'baseline', paddingLeft:"10px"}} />
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
 </div>
           </div>
