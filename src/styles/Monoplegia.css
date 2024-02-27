@@ -9,7 +9,11 @@
     width: 100%;
    
 }  
-
+.treat{
+   color:#00345f;
+   font-weight: bold;
+   font-size:28px;
+}
 .modal-overlay {
    position: fixed;
    top: 0;
@@ -51,7 +55,11 @@
    font-size: 20px;
    cursor: pointer;
  }
-
+ .slick-slider {
+  /* Enable vertical scrolling */
+   min-height: 350px; /* Set max height for the slider container */
+ }
+ 
 
 
 .Input_Area{
