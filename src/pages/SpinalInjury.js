@@ -125,7 +125,7 @@ const Dropdowns = () => {
 
   const handleRedirect = () => {
     console.log('Sending data to Flask server:', inputValues);
-    axios.post('http://localhost:5000/process_data', { data: inputValues })
+    axios.post('https://spinalpython.onrender.com/process_data', { data: inputValues })
       .then(response => {
         console.log('Server response:', response.data);
         const { updatedData } = response.data; // Extracting updatedData from the response
