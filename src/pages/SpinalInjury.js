@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Health from "../assets/Brain.jpg";
+import Health from "../assets/spino.jpg";
 import "../styles/Monoplegia.css";
-import spino from "../assets/spino.jpg";
 import { useHistory,Link } from "react-router-dom";
 import axios from 'axios';
 const Dropdowns = () => {
@@ -126,7 +125,7 @@ const Dropdowns = () => {
 
   const handleRedirect = () => {
     console.log('Sending data to Flask server:', inputValues);
-    axios.post('https://spinalpython.onrender.com/process_data', { data: inputValues })
+    axios.post('http://localhost:5000/process_data', { data: inputValues })
       .then(response => {
         console.log('Server response:', response.data);
         const { updatedData } = response.data; // Extracting updatedData from the response
@@ -220,13 +219,18 @@ const Dropdowns = () => {
     const newInputValues = {};
     for (const key in inputValues) {
       if (key === 'Bladder_Management') {
-        newInputValues[key] = 'a'; 
+        newInputValues[key] = 'a';
       } else {
-        newInputValues[key] = '2';
+        newInputValues[key] = generateRandomValue(); 
       }
     }
     setInputValues(newInputValues);
   };
+  
+  const generateRandomValue = () => {
+    const randomNumber = Math.floor(Math.random() * 16); // Generates random number between 0 and 15
+    return randomNumber.toString();
+};
   
 
   return (
@@ -642,8 +646,8 @@ const Dropdowns = () => {
                 </tr>
                 <tr>
 
-                  <td>
-                    <label htmlFor="DaysForTreatment">Days Of Treatment</label>
+                <td  colSpan={3} style={{alignItems: 'center', justifyContent: 'center'}}> 
+                    <label className="treat" htmlFor="DaysForTreatment">Days Of Treatment</label>
                     <input id="DaysForTreatment" name="Days_Of_Treatment" value={inputValues.Days_Of_Treatment} onChange={handleChange} type="number" />
                   </td>
 
@@ -659,23 +663,20 @@ const Dropdowns = () => {
             <div>
       <button onClick={openModal}>Process</button>
 
-  {isModalOpen && (
-  <div className="modal-overlay">
-    <div className="modal-content">
-      <span className="close-button" onClick={closeModal}>
-        &times;
-      </span>
-      <div className="video-and-image-container">
-        <video width="450" height="400" controls autoPlay>
-          <source src="/Normal.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <img src={spino} alt="Your Image" width="250" height="332"  style={{ verticalAlign: 'baseline', paddingLeft:"10px"}} />
-      </div>
-    </div>
-  </div>
-)}
-
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <span className="close-button" onClick={closeModal}>
+              &times;
+            </span>
+            <video width="700" height="500" controls autoPlay>
+              <source src="/90per.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+           
+          </div>
+        </div>
+      )}
     </div>
 </div>
           </div>
