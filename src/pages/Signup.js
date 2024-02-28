@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import "../styles/Signup.css";
+import Loginnav from "../components/Loginnav";
+import "../styles/Signin.css";
 import PizzaLeft from "../assets/signup.jpg";
 import {useHistory , Link} from "react-router-dom";
 
@@ -41,6 +43,8 @@ const Signup = () => {
   };
 
   return (
+    <div>
+<Loginnav />
     <div className="signup-container">
       <div className="signup-image">
         <img src={PizzaLeft} alt="Signup Image" />
@@ -115,6 +119,7 @@ const Signup = () => {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 };

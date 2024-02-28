@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import "../styles/Signin.css";
+import Logo from "../assets/cadfem-logo.png";
+import Logo2 from "../assets/strategic-ventures-logo-dark.png";
+import Loginnav from "../components/Loginnav"
+
 import PizzaLeft from "../assets/login.jpg";
 
 const Login = () => {
@@ -32,6 +36,9 @@ const Login = () => {
   };
 
   return (
+   
+    <div>
+<Loginnav />
     <div className="login-container">
       <div className="login-image">
         <img src={PizzaLeft} alt="Login Image" />
@@ -63,6 +70,7 @@ const Login = () => {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 };
