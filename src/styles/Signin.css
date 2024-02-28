@@ -34,6 +34,57 @@
     color:#00345f;
     font-weight:bold;
   }
+
+/* Navbar.css */
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color:#f3f6f9;
+  color: white;
+  height:50px;
+  width:100%;
+  position:relative;
+}
+
+.bar {
+  position: relative;
+}
+
+.logo {
+  width: 100%px;
+  height: 30px;
+  margin-right: 10px;
+  
+}
+
+.logo2 {
+  
+  height: 55px;
+  margin-right: 10px;
+}
+
+
+.heading {
+  margin: 0;
+  color:white;
+  background-color:#00345f;
+  height:90px;
+  font-size:32px;
+  align-items: center;
+  font-family:robotosans;
+  font-weight:bold;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+
   form input{
     border-radius:6px;
     margin-left:10px;
