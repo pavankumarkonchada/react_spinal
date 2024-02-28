@@ -5,7 +5,7 @@ import Logo from "../assets/cadfem-logo.png";
 import Logo2 from "../assets/strategic-ventures-logo-dark.png";
 import Loginnav from "../components/Loginnav"
 
-import PizzaLeft from "../assets/login.jpg";
+import PizzaLeft from "../assets/login.webp";
 
 const Login = () => {
   const [username, setUsername] = useState('');
