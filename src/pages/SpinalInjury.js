@@ -125,7 +125,7 @@ const Dropdowns = () => {
 
   const handleRedirect = () => {
     console.log('Sending data to Flask server:', inputValues);
-    axios.post('https://spinalpython.onrender.com/process_data', { data: inputValues })
+    axios.post('http://localhost:5000/process_data', { data: inputValues })
       .then(response => {
         console.log('Server response:', response.data);
         const { updatedData } = response.data; // Extracting updatedData from the response
@@ -646,9 +646,9 @@ const Dropdowns = () => {
                 </tr>
                 <tr>
 
-                <td  colSpan={3} style={{alignItems: 'center', justifyContent: 'center'}}> 
+                <td  colSpan={6} style={{textAlign:'center', justifyContent: 'center',marginTop:'10px'}}> 
                     <label className="treat" htmlFor="DaysForTreatment">Days Of Treatment</label>
-                    <input id="DaysForTreatment" name="Days_Of_Treatment" value={inputValues.Days_Of_Treatment} onChange={handleChange} type="number" />
+                    <input style={{width:'30%',marginLeft:'10px'}} id="DaysForTreatment" name="Days_Of_Treatment" value={inputValues.Days_Of_Treatment} onChange={handleChange} type="number" />
                   </td>
 
 
