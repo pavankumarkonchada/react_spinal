@@ -46,8 +46,8 @@ const Login = () => {
       <div className="login-content">
         <h2>Login</h2>
         <form>
-          <div style={{padding:'30px'}}>
-            <label  htmlFor="username">Username:</label>
+          <div style={{padding:'20px'}}>
+            <label  htmlFor="username">Username</label>
             <input
               type="text"
               id="username"
@@ -55,8 +55,8 @@ const Login = () => {
               onChange={handleUsernameChange}
             />
           </div>
-          <div style={{padding:'30px'}}>
-            <label htmlFor="password">Password:</label>
+          <div style={{padding:'20px'}}>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
@@ -64,7 +64,7 @@ const Login = () => {
               onChange={handlePasswordChange}
             />
           </div>
-          <div style={{display: "flex",alignItems: "center",justifyContent: "space-between", width:"100%", paddingTop:"10px"}}>
+          <div style={{display: "flex",alignItems: "center",justifyContent: "space-between", width:"100%", paddingTop:"30px"}}>
             <button type="button" onClick={handleSignIn}>Sign In</button>
             <button type="button" onClick={handleSignUp}>Sign Up</button>
           </div>
